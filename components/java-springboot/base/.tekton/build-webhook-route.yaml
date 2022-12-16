@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    appstudio.openshift.io/application: appstudio
+    appstudio.openshift.io/component: java-springboot
+    build.appstudio.openshift.io/build: "true"
+    build.appstudio.openshift.io/type: build
+    build.appstudio.openshift.io/version: "0.1"
+    pipelines.appstudio.openshift.io/type: build
+  creationTimestamp: null
+  name: eljava-springboot
+  namespace: 529b6595-76a8-4cdd-97b7-53ab9aa54916
+spec:
+  path: /
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: el-java-springboot
+    weight: null
+status: {}
